@@ -1,0 +1,37 @@
+
+source ./env.sh
+
+kubectl ctx local
+
+#helm uninstall $BRANCH -n fleet-default
+
+helm upgrade -i $BRANCH . --debug \
+  --namespace fleet-default \
+  --values ./values.yaml \
+  --set aws.controlPlane.iamInstanceProfile="$CONTROL_PLANE_INSTANCE_PROFILE" \
+  --set aws.securityGroups[0]="demo" \
+  --set aws.securityGroups[1]="demo-rancher-nodes" \
+  --set aws.subnet="$AWS_SUBNET" \
+  --set aws.vpc="$AWS_VPC" \
+  --set aws.worker.iamInstanceProfile="$WORKER_INSTANCE_PROFILE" \
+  --set cloudCredentialSecretName="$RANCHER_CLOUD_CREDENTIALS_SECRET" \
+  --set cluster.dns.hostedZone="$HOSTED_ZONE" \
+  --set cluster.domainName="$BRANCH.$DOMAIN" \
+  --set cluster.name="$BRANCH"   &&  \
+helm template $BRANCH . --debug \
+  --namespace fleet-default \
+  --values ./values.yaml \
+  --set aws.controlPlane.iamInstanceProfile="$CONTROL_PLANE_INSTANCE_PROFILE" \
+  --set aws.securityGroups[0]="demo" \
+  --set aws.securityGroups[1]="demo-rancher-nodes" \
+  --set aws.subnet="$AWS_SUBNET" \
+  --set aws.vpc="$AWS_VPC" \
+  --set aws.worker.iamInstanceProfile="$WORKER_INSTANCE_PROFILE" \
+  --set cloudCredentialSecretName="$RANCHER_CLOUD_CREDENTIALS_SECRET" \
+  --set cluster.dns.hostedZone="$HOSTED_ZONE" \
+  --set cluster.domainName="$BRANCH.$DOMAIN" \
+  --set cluster.name="$BRANCH" | tee deployed-$BRANCH.yaml
+
+
+echo "deployed cluster $BRANCH"
+
