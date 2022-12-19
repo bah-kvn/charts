@@ -1,0 +1,32 @@
+{{ if .Values.flux.enabled }}
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: "{{ .Release.Name }}"
+  namespace: "flux-system"
+  labels:
+    app.kubernetes.io/instance: {{ .Release.Namespace | quote }}
+    app.kubernetes.io/managed-by: {{ .Release.Service | quote }}
+    app.kubernetes.io/version: {{ .Chart.AppVersion | quote  }}
+    app.kubernetes.io/part-of: "flux"
+    helm.sh/chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+  annotations:
+    "helm.sh/hook": "pre-install"
+    "helm.sh/hook-weight": "10"
+    "helm.sh/hook-delete-policy": "before-hook-creation"
+spec:
+  backoffLimit: 1
+  template:
+    metadata:
+    spec:
+      restartPolicy: "Never"
+      serviceAccountName: "{{ .Release.Name }}-flux"
+      imagePullSecrets:
+      - name: "private-registry"
+      containers:
+      - image: "registry1.dso.mil/ironbank/big-bang/utilities:1.0.0"
+        command: ["/bin/sh"]
+        args: ["-c", "/usr/local/bin/flux install"]
+        name: "flux-install"
+{{- end }}

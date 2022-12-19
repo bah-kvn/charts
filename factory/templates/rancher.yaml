@@ -1,0 +1,56 @@
+{{ if .Values.rancher.enabled }}
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    istio-injection: enabled
+  name: {{ .Values.rancher.namespace }}
+spec:
+  finalizers:
+  - kubernetes
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: private-registry
+  namespace: {{ .Values.rancher.namespace }} 
+type: kubernetes.io/dockerconfigjson
+data:
+  .dockerconfigjson: {{ template "imagePullSecret" . }}
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: rancher-latest
+  namespace: flux-system
+spec:
+  interval: 10m0s
+  timeout: 60s
+  url: {{ .Values.rancher.chart_repo }}
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: rancher
+  namespace: {{ .Values.rancher.namespace }}
+spec:
+  chart:
+    spec:
+      chart: rancher
+      interval: 1m0s
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: rancher-latest
+        namespace: flux-system
+      version: {{ .Values.rancher.chart_version }}
+  interval: 1m0s
+  targetNamespace: {{ .Values.rancher.namespace }}
+  dependsOn:
+    - name: istio
+      namespace: bigbang
+  values:
+    bootstrapPassword: "{{ .Values.rancher.password }}"
+    hostname: "rancher.{{ .Values.cluster.domain }}"
+{{ end }}

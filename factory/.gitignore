@@ -1,0 +1,11 @@
+kustomize/
+tmp/
+x
+z
+tmpl
+test.sh
+factory.yaml
+yaml/*
+wip/
+examples/rancher.sh
+examples/env.sh

@@ -1,0 +1,56 @@
+---
+domain: ""
+bigbang:
+  enabled: false
+  repo: "https://github.boozallencsn.com/Solutions-Center/bigbang.git"
+  branch: ""
+  path: ""
+certManager:
+  enabled: true
+  chart_repo: "https://charts.jetstack.io"
+  chart_version: "1.9.1"
+  namespace: "cert-manager"
+cluster:
+  aws_region: ""
+  decryption_provider: "sops"
+  domain: ""
+  hosted_zone_id: ""
+  name: ""
+  staging_cert: true
+externalDns:
+  enabled: true
+  chart_repo: "https://kubernetes-sigs.github.io/external-dns"
+  chart_version: "1.10.1"
+  namespace: "kube-system"
+extraObjects: []
+flux:
+  enabled: true
+  namespace: "flux-system"
+git:
+  password: ""
+  username: ""
+letsEncrypt:
+  email: ""
+  issuer: "staging"
+  staging_url: "https://acme-v02.api.letsencrypt.org/directory"
+  production_url: "https://acme-v02.api.letsencrypt.org/directory"
+longhorn:
+  enabled: false
+  chart_repo: "https://charts.longhorn.io"
+  chart_version: "1.3.1"
+  namespace: "longhorn-system"
+rancher:
+  enabled: false
+  chart_repo: "https://releases.rancher.com/server-charts/latest"
+  chart_version: "2.6.8"
+  cloud:
+    rancher_aws_access_key_id: ""
+    rancher_aws_secret_access_key: ""
+  namespace: "cattle-system"
+  password: ""
+  url: ""
+registryCredentials:
+  registry: "registry1.dso.mil"
+  username: ""
+  password: ""
+  email: ""

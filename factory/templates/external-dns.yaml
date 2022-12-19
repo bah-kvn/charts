@@ -1,0 +1,35 @@
+{{ if .Values.externalDns.enabled }}
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: external-dns
+  namespace: flux-system
+spec:
+  interval: 10m0s
+  url: {{ .Values.externalDns.chart_repo }}
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: external-dns
+  namespace: {{ .Values.externalDns.namespace }}
+spec:
+  chart:
+    spec:
+      chart: external-dns
+      interval: 1m0s
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: external-dns
+        namespace: flux-system
+      version: {{ .Values.externalDns.chart_version }}
+  interval: 1m0s
+  targetNamespace: {{ .Values.externalDns.namespace }}
+  values:
+    domainFilters[0]: {{ .Values.cluster.domain | quote }}
+    sources[0]: "service"
+    sources[1]: "istio-virtualservice"
+    sources[2]: "istio-gateway"
+{{ end }}
