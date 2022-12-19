@@ -1,0 +1,24 @@
+export CLUSTER_NAME="stg"
+helm template factory ../ --debug \
+  --set longhorn.enabled=false \
+  --set rancher.enabled=false \
+  --set cluster.aws_region="$AWS_REGION" \
+  --set cluster.domain="$CLUSTER_NAME.$DOMAIN" \
+  --set flux.enabled=true \
+  --set cluster.hosted_zone_id="Z035959739Z0LUKSAJZYX" \
+  --set letsEncrypt.email="$EMAIL" \
+  --set letsEncrypt.issuer="staging" \
+  --set rancher.password="$DEFAULT_PASSWORD" \
+  --set rancher.url="rancher.$CLUSTER_NAME.$DOMAIN" \
+  --set repo.branch="rke2" \
+  --set repo.password="$GHCSN_PASSWORD" \
+  --set repo.path="rke2" \
+  --set repo.url="https://github.boozallencsn.com/Solutions-Center/bigbang.git" \
+  --set repo.username="$GHCSN_USERNAME" \
+  --set registryCredentials.username="$REGISTRY1_USERNAME" \
+  --set registryCredentials.password="$REGISTRY1_PASSWORD" \
+  --set registryCredentials.email="$EMAIL" | tee /tmp/factory.yaml
+
+rm -rf /tmp/factory
+kubectl slice -f /tmp/factory.yaml -o /tmp/factory
+
