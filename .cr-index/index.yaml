@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  factory:
+  - apiVersion: v2
+    appVersion: 0.2.1
+    created: "2022-12-19T13:59:43.600182-06:00"
+    description: A Helm chart for Kubernetes
+    digest: e8b43864f3eace88fdc86420d68086a316e9817a66c01c4d49eddb5ead5b5f7f
+    name: factory
+    type: application
+    urls:
+    - https://github.com/bah-kvn/charts/releases/download/factory-0.2.1/factory-0.2.1.tgz
+    version: 0.2.1
+generated: "2022-12-19T13:59:43.600202-06:00"
