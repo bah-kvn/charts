@@ -3,12 +3,12 @@ entries:
   factory:
   - apiVersion: v2
     appVersion: 0.2.3
-    created: "2022-12-19T14:42:09.491351-06:00"
+    created: "2022-12-19T14:43:09.37733-06:00"
     description: A Helm chart for Kubernetes
-    digest: af17a4e74a15dc3ef7b3ac0c289cb0dc8e65dddef86cdb070dc9d3e488dbda47
+    digest: 8e6329e62d0fa53b56455ddccecd4b6d91addc4c1a2bc1920416e2f2674321c6
     name: factory
     type: application
     urls:
     - factory-0.2.3.tgz
     version: 0.2.3
-generated: "2022-12-19T14:42:09.489001-06:00"
+generated: "2022-12-19T14:43:09.375027-06:00"
