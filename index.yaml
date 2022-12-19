@@ -2,13 +2,33 @@ apiVersion: v1
 entries:
   factory:
   - apiVersion: v2
-    appVersion: 0.2.1
-    created: "2022-12-19T13:42:55.715459-06:00"
+    appVersion: 0.2.2
+    created: "2022-12-19T14:36:08.234405-06:00"
     description: A Helm chart for Kubernetes
-    digest: b9b640b1014d356b3629558cae014fa1ad843f516d089fa7a8add727424236ce
+    digest: 8602b4c72ba658b6cf3acd3b4dec815f479b150f0e2d932e8354c7ea43baba7b
+    name: factory
+    type: application
+    urls:
+    - factory-0.2.2.tgz
+    version: 0.2.2
+  - apiVersion: v2
+    appVersion: 0.2.2
+    created: "2022-12-19T14:36:08.23751-06:00"
+    description: A Helm chart for Kubernetes
+    digest: 67d5486c60ad46da69ab698fdfca237ce3b00316263669143b06373e838b4802
+    name: factory
+    type: application
+    urls:
+    - .deploy/factory-0.2.2.tgz
+    version: 0.2.2
+  - apiVersion: v2
+    appVersion: 0.2.1
+    created: "2022-12-19T14:36:08.235887-06:00"
+    description: A Helm chart for Kubernetes
+    digest: e8b43864f3eace88fdc86420d68086a316e9817a66c01c4d49eddb5ead5b5f7f
     name: factory
     type: application
     urls:
     - .deploy/factory-0.2.1.tgz
     version: 0.2.1
-generated: "2022-12-19T13:42:55.713283-06:00"
+generated: "2022-12-19T14:36:08.23207-06:00"
