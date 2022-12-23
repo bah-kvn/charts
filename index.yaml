@@ -3,9 +3,9 @@ entries:
   factory:
   - apiVersion: v2
     appVersion: 0.2.5
-    created: "2022-12-23T11:06:36.982806-06:00"
+    created: "2022-12-23T11:07:22.551826-06:00"
     description: A Helm chart for Kubernetes
-    digest: aae9f59d390c1e250fd68e909d096805db1a81fc4a8db0c39756c991b81fcac8
+    digest: 2c3a8c3a381d892aa1829a4b3f73f2113a3eef89769979bcf7fc981d6c22c8a3
     name: factory
     type: application
     urls:
@@ -13,7 +13,7 @@ entries:
     version: 0.2.5
   - apiVersion: v2
     appVersion: 0.2.4
-    created: "2022-12-23T11:06:36.978522-06:00"
+    created: "2022-12-23T11:07:22.548982-06:00"
     description: A Helm chart for Kubernetes
     digest: 1494e7ac4c309d38ce34068828f5223e54405825fdad376c7e58e3f468ffdbf3
     name: factory
@@ -23,7 +23,7 @@ entries:
     version: 0.2.4
   - apiVersion: v2
     appVersion: 0.2.3
-    created: "2022-12-23T11:06:36.974719-06:00"
+    created: "2022-12-23T11:07:22.544987-06:00"
     description: A Helm chart for Kubernetes
     digest: 8e6329e62d0fa53b56455ddccecd4b6d91addc4c1a2bc1920416e2f2674321c6
     name: factory
@@ -31,4 +31,4 @@ entries:
     urls:
     - factory-0.2.3.tgz
     version: 0.2.3
-generated: "2022-12-23T11:06:36.972568-06:00"
+generated: "2022-12-23T11:07:22.543081-06:00"
