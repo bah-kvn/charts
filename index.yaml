@@ -3,9 +3,9 @@ entries:
   factory:
   - apiVersion: v2
     appVersion: 0.2.8
-    created: "2023-01-03T15:43:24.7969-06:00"
+    created: "2023-01-03T15:44:00.023997-06:00"
     description: A Helm chart for Kubernetes
-    digest: 44b67553ab3e697abaf97a600a3736a4a5f498b0b6c5cf23d1e40f824ce91419
+    digest: 2872de59bb5202afd7f00b5e88e047a119ab3ffe154c7cc1458a2a9c6ce9616f
     name: factory
     type: application
     urls:
@@ -13,7 +13,7 @@ entries:
     version: 0.2.8
   - apiVersion: v2
     appVersion: 0.2.7
-    created: "2023-01-03T15:43:24.795682-06:00"
+    created: "2023-01-03T15:44:00.021952-06:00"
     description: A Helm chart for Kubernetes
     digest: 74c0d259160cd0bb4e2783d55bb0ef100cfdffc72c244b066468599e85e1e561
     name: factory
@@ -23,7 +23,7 @@ entries:
     version: 0.2.7
   - apiVersion: v2
     appVersion: 0.2.6
-    created: "2023-01-03T15:43:24.79368-06:00"
+    created: "2023-01-03T15:44:00.020331-06:00"
     description: A Helm chart for Kubernetes
     digest: 07ee894f989eb3a38a9c17fd129bd7eb210d1f213d1f57ec74118302979ae939
     name: factory
@@ -33,7 +33,7 @@ entries:
     version: 0.2.6
   - apiVersion: v2
     appVersion: 0.2.5
-    created: "2023-01-03T15:43:24.792117-06:00"
+    created: "2023-01-03T15:44:00.018808-06:00"
     description: A Helm chart for Kubernetes
     digest: 3d71e0b2c90eb4ace267d1ac55aba8d1c684bac52390b146301e1e7a829258ac
     name: factory
@@ -43,7 +43,7 @@ entries:
     version: 0.2.5
   - apiVersion: v2
     appVersion: 0.2.4
-    created: "2023-01-03T15:43:24.788937-06:00"
+    created: "2023-01-03T15:44:00.016168-06:00"
     description: A Helm chart for Kubernetes
     digest: 1494e7ac4c309d38ce34068828f5223e54405825fdad376c7e58e3f468ffdbf3
     name: factory
@@ -53,7 +53,7 @@ entries:
     version: 0.2.4
   - apiVersion: v2
     appVersion: 0.2.3
-    created: "2023-01-03T15:43:24.785365-06:00"
+    created: "2023-01-03T15:44:00.012819-06:00"
     description: A Helm chart for Kubernetes
     digest: 8e6329e62d0fa53b56455ddccecd4b6d91addc4c1a2bc1920416e2f2674321c6
     name: factory
@@ -61,4 +61,4 @@ entries:
     urls:
     - factory-0.2.3.tgz
     version: 0.2.3
-generated: "2023-01-03T15:43:24.783488-06:00"
+generated: "2023-01-03T15:44:00.011335-06:00"
