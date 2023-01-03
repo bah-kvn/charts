@@ -1,5 +1,5 @@
 helm package /usr/local/git/factory/
-version=$(cat ../factory/Chart.yaml | yq '.version')
+export version=$(cat ../factory/Chart.yaml | yq '.version')
 helm repo index . # create or update the index.yaml for repo
 git add .
 git commit -m "updates for $version"
